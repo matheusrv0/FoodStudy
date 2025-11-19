@@ -1,13 +1,21 @@
 // src/main/java/com/foodstudy/model/Usuario.java
-package com.foodstudy.model;
+package com.foodstudy.domain.model;
 
 import com.foodstudy.model.enums.TipoUsuario;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
 @Entity
 @Table(name = "usuarios")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@ToString(exclude = {"foodCash", "pedidos", "assinaturas", "notificacoes"})
 public class Usuario {
 
     @Id
@@ -23,7 +31,9 @@ public class Usuario {
     private TipoUsuario tipo;
 
     // 1-1 com FoodCash
-    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "usuario",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
     private FoodCash foodCash;
 
     @OneToMany(mappedBy = "usuario")
@@ -35,5 +45,5 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario")
     private List<Notificacao> notificacoes;
 
-    // getters e setters
+
 }

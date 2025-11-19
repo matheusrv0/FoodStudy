@@ -1,12 +1,20 @@
 // src/main/java/com/foodstudy/model/FoodCash.java
-package com.foodstudy.model;
+package com.foodstudy.domain.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "foodcash")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@ToString
 public class FoodCash {
 
     @Id
@@ -15,8 +23,11 @@ public class FoodCash {
 
     private BigDecimal saldo = BigDecimal.ZERO;
 
-    @OneToOne
-    @JoinColumn(name = "usuario_id")
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    @JoinColumn(name = "usuario_id",
+                nullable = false,
+                unique = true)
     private Usuario usuario;
 
     
@@ -36,5 +47,4 @@ public class FoodCash {
         return this.saldo;
     }
 
-    // getters e setters
 }

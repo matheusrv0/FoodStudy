@@ -1,5 +1,5 @@
 // domain/dto/PedidoRequest.java
-package br.com.foodstudy.domain.dto;
+package com.foodstudy.domain.dto;
 
 import java.time.LocalDateTime;
 import java.util.List;

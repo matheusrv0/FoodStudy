@@ -1,5 +1,5 @@
 // src/main/java/com/foodstudy/model/enums/StatusPedido.java
-package com.foodstudy.model.enums;
+package com.foodstudy.domain.enums;
 
 public enum StatusPedido {
     AGENDADO,

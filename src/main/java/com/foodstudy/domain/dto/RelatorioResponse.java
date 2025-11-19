@@ -1,4 +1,4 @@
-package br.com.foodstudy.domain.dto;
+package com.foodstudy.domain.dto;
 
 import br.com.foodstudy.domain.enums.TipoRelatorio;
 import java.time.LocalDateTime;

@@ -1,5 +1,5 @@
 // src/main/java/com/foodstudy/model/enums/TipoUsuario.java
-package com.foodstudy.model.enums;
+package com.foodstudy.domain.enums;
 
 public enum TipoUsuario {
     ALUNO,

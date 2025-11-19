@@ -1,4 +1,4 @@
-package br.com.foodstudy.domain.dto;
+package com.foodstudy.domain.dto;
 
 public class EstabelecimentoRequest {
 

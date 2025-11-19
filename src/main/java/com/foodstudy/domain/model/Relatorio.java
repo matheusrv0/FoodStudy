@@ -1,13 +1,21 @@
 // src/main/java/com/foodstudy/model/Relatorio.java
-package com.foodstudy.model;
+package com.foodstudy.domain.model;
 
 import com.foodstudy.model.enums.TipoRelatorio;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "relatorios")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@ToString
 public class Relatorio {
 
     @Id
@@ -17,14 +25,13 @@ public class Relatorio {
     @Enumerated(EnumType.STRING)
     private TipoRelatorio tipo;
 
-    private LocalDateTime data;
+    private LocalDateTime data = LocalDateTime.now();
 
     @Lob
     private String conteudo;
 
-    @ManyToOne
-    @JoinColumn(name = "estabelecimento_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "estabelecimento_id",nullable = false)
     private Estabelecimento estabelecimento;
 
-    // getters e setters
 }

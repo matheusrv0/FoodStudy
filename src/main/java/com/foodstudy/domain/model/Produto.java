@@ -1,13 +1,21 @@
 // src/main/java/com/foodstudy/model/Produto.java
-package com.foodstudy.model;
+package com.foodstudy.domain.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
 @Table(name = "produtos")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@ToString
 public class Produto {
 
     @Id
@@ -20,15 +28,13 @@ public class Produto {
 
     private BigDecimal preco;
 
-    // tipo pode ser "LANCHE", "BEBIDA", etc
     private String tipo;
 
-    @ManyToOne
-    @JoinColumn(name = "estabelecimento_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "estabelecimento_id", nullable = false)
     private Estabelecimento estabelecimento;
 
-    @OneToMany(mappedBy = "produto")
+    @ManyToMany(mappedBy = "produtos", fetch = FetchType.LAZY)
     private List<Pedido> pedidos;
 
-    // getters e setters
 }

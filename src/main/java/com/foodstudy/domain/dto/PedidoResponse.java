@@ -1,9 +1,10 @@
 // domain/dto/PedidoResponse.java
-package br.com.foodstudy.domain.dto;
+package com.foodstudy.domain.dto;
 
 import br.com.foodstudy.domain.enums.StatusPedido;
 import java.time.LocalDateTime;
 import java.util.List;
+
 
 public class PedidoResponse {
 
@@ -14,5 +15,4 @@ public class PedidoResponse {
     private LocalDateTime horarioRetirada;
     private StatusPedido status;
 
-    // getters/setters
 }

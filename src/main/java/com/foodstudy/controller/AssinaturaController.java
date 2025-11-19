@@ -1,4 +1,4 @@
-package br.com.foodstudy.controller;
+package com.foodstudy.controller;
 
 import br.com.foodstudy.domain.dto.AssinaturaRequest;
 import br.com.foodstudy.domain.dto.AssinaturaResponse;

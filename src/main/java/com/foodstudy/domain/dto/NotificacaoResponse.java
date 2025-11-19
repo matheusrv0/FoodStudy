@@ -1,4 +1,4 @@
-package br.com.foodstudy.domain.dto;
+package com.foodstudy.domain.dto;
 
 import java.time.LocalDateTime;
 
@@ -22,4 +22,3 @@ public class NotificacaoResponse {
     public LocalDateTime getCriadaEm() { return criadaEm; }
     public void setCriadaEm(LocalDateTime criadaEm) { this.criadaEm = criadaEm; }
 }
-c
