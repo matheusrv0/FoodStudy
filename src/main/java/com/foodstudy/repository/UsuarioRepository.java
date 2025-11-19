@@ -1,7 +1,7 @@
 // src/main/java/com/foodstudy/repository/UsuarioRepository.java
 package com.foodstudy.repository;
 
-import com.foodstudy.model.Usuario;
+import com.foodstudy.domain.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,8 +1,8 @@
 // src/main/java/com/foodstudy/repository/PedidoRepository.java
 package com.foodstudy.repository;
 
-import com.foodstudy.model.Pedido;
-import com.foodstudy.model.enums.StatusPedido;
+import com.foodstudy.domain.enums.StatusPedido;
+import com.foodstudy.domain.model.Pedido;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDateTime;
